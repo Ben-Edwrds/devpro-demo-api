@@ -19,13 +19,15 @@ jobs:
             
             # Controleer of de map al een git repo is, zo niet: clone. Zo ja: pull.
             if [ ! -d ".git" ]; then
-              git clone https://github.com/${{ github.repository }}.git .
+              git clone https://github.com/Ben-Edwrds/devpro-demo-api.git .
             else
               git fetch --all
               git reset --hard origin/main
             fi
             
-            npm install
+            # Gebruik een tijdelijke Docker container voor npm install
+            docker run --rm -v /opt/external-api/app:/app -w /app node:18 npm install
             
+            # Herstart de Node.js container zonder sudo
             cd /opt/external-api
-            sudo docker compose restart ext_nodejs
+            docker compose restart ext_nodejs
