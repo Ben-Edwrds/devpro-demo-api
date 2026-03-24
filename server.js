@@ -49,8 +49,6 @@ const server = http.createServer((req, res) => {
         <div class="container">
             <h1>🚀 DevPro4 Server Online</h1>
             <p>Welkom! De automatische CI/CD pipeline is succesvol doorlopen. Alles wat in GitHub wordt gepusht, staat nu live.</p>
-            <p><strong>Huidige Missie:</strong> Sprint 4 - Infrastructuur automatiseren met Ansible & Terraform.</p>
-            <div class="status-badge">✅ Systeem Gezond & Verbonden</div>
         </div>
     </body>
     </html>
