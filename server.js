@@ -4,10 +4,8 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  // Let op: we vertellen de browser hier dat we HTML sturen, geen gewone tekst!
   res.setHeader('Content-Type', 'text/html; charset=utf-8'); 
   
-  // Hier bouwen we de HTML pagina
   const htmlPagina = `
     <!DOCTYPE html>
     <html lang="nl">
