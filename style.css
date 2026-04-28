@@ -1,0 +1,122 @@
+/* Slider styles */
+.slider-container {
+    position: relative;
+    max-width: 600px;
+    margin: 30px auto;
+    background: #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    padding: 20px 0 40px 0;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    min-height: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #008cff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.2s;
+}
+
+.slider-btn:hover {
+    background: #005fa3;
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
+}
+
+/* Algemene stijlen */
+body { 
+    font-family: 'Arial', sans-serif;
+    background-color: #02273f; 
+    color: #ffffff; 
+    text-align: center; 
+    padding: 50px; 
+    margin: 0;
+}
+
+.container { 
+    background-color: #443131; 
+    border-radius: 15px; 
+    padding: 40px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    max-width: 80%; 
+    margin: auto; 
+}
+
+/* Herstelde selector: de punt voor .container was vergeten */
+.container > div:not(:first-child) {
+    border-top: 2px solid #008cff; 
+}
+
+h1, h2 { color: #ffffff; } 
+p { font-size: 1.2em; line-height: 1.6; }
+
+.status-badge { 
+    display: inline-block; 
+    padding: 10px 25px; 
+    background-color: #a6e3a1; 
+    color: #11111b; 
+    border-radius: 8px; 
+    margin-top: 25px; 
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+a.nav-link {
+    color: #cdd6f4; 
+    text-decoration: none; 
+    font-weight: bold;
+}
+
+a.nav-link:hover {
+    color: #a6e3a1; 
+}
+
+nav {
+    margin-bottom: 30px;
+}
+
+section {
+    margin-top: 30px;
+    border-top: #008cff 2px solid;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | DevPro4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">DevPro4.</a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/over.html">Over Ons</a>
+            <a href="/diensten.html">Diensten</a>
+            <a href="/contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title reveal">Neem Contact Op</h1>
+        
+        <div class="glass-panel reveal" style="max-width: 800px; margin: 0 auto;">
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">Klaar om uw infrastructuur naar een hoger niveau te tillen? Stuur ons een bericht en wij nemen zo snel mogelijk contact met u op.</p>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Bericht verzonden! (Demo functionaliteit)');">
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="name">Naam</label>
+                        <input type="text" id="name" class="form-control" placeholder="Uw volledige naam" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mailadres</label>
+                        <input type="email" id="email" class="form-control" placeholder="naam@bedrijf.nl" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Onderwerp</label>
+                    <input type="text" id="subject" class="form-control" placeholder="Waar gaat het over?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Bericht</label>
+                    <textarea id="message" class="form-control" placeholder="Hoe kunnen we u helpen?" required></textarea>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn">Verstuur Bericht</button>
+                </div>
+            </form>
+
+            <div style="text-align: center; margin-top: 50px; border-top: 1px solid var(--glass-border); padding-top: 30px;">
+                <p>Of stuur ons direct een e-mail op: <a href="mailto:info@devpro4.be" style="color: var(--accent-cyan); text-decoration: none;">info@devpro4.be</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DevPro4. Alle rechten voorbehouden.</p>
+    </footer>
+</body>
+</html>
