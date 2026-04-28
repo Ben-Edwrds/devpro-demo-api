@@ -1,0 +1,52 @@
+---
+- name: DevPro4 Master Server Configuratie
+  hosts: testserver
+  become: yes
+
+  tasks:
+    - name: 1. Update de server met de nieuwste pakketten
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: 2. Zorg dat de UFW Firewall aanwezig is
+      apt:
+        name: ufw
+        state: present
+
+    - name: 3. Open poort 22 (SSH) zodat we onszelf niet buitensluiten
+      ufw:
+        rule: allow
+        port: '22'
+        proto: tcp
+
+    - name: 4. Open poorten 80 en 443 voor webverkeer
+      ufw:
+        rule: allow
+        port: '80,443'
+        proto: tcp
+
+    - name: 5. Zet de Firewall aan en blokkeer de rest (Default Deny)
+      ufw:
+        state: enabled
+        policy: deny
+
+    - name: 6. Schakel inloggen met wachtwoorden uit (alleen SSH-keys)
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PasswordAuthentication'
+        line: 'PasswordAuthentication no'
+      notify: Herstart SSH
+
+    - name: 7. Blokkeer directe root-login
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PermitRootLogin'
+        line: 'PermitRootLogin no'
+      notify: Herstart SSH
+
+  handlers:
+    - name: Herstart SSH
+      service:
+        name: ssh
+        state: restarted
